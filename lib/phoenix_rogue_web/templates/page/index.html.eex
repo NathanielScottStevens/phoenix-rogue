@@ -1,0 +1,9 @@
+<canvas id="canvas"></canvas>
+
+<script>
+ var canvas = document.getElementById("canvas");
+ var ctx = canvas.getContext("2d");
+ ctx.font = "30px monospace";
+ ctx.fillText("\u2560i\u2550\u2563", 10, 50);
+ ctx.fillText("\u2560Z\u2550\u2563", 10, 85.5);
+</script>
