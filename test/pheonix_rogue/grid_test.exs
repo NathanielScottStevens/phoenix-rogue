@@ -9,6 +9,13 @@ defmodule GridTest do
       assert expected == subject
     end
 
+    test "accepts two dimensional lists" do
+      subject = Grid.create([[2, 3], [0, 1]])
+      expected = %{{0, 0} => 0, {1, 0} => 1, {0, 1} => 2, {1, 1} => 3}
+
+      assert expected == subject.data
+    end
+
     test "sets correct default value" do
       subject = Grid.create(2, 3, 1)
       assert Map.values(subject.data) |> Enum.all?(&(&1 == 1))
@@ -17,7 +24,7 @@ defmodule GridTest do
 
   describe "to_string" do
     test "returns string separated by newlines" do
-      subject = %{{0, 0} => 0, {1, 0} => 1, {0, 1} => 2, {1, 1} => 3}
+      subject = Grid.create([[2, 3], [0, 1]])
       assert "23\n01\n" == Grid.to_string(subject)
     end
   end
